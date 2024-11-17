@@ -1,0 +1,29 @@
+
+<!-- Example of an Index view for Flights -->
+@model IEnumerable<Flight>
+
+<h2>Flights</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Flight Number</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FlightNumber</td>
+                <td>@item.Origin</td>
+                <td>@item.Destination</td>
+                <td>
+                    <a href="/Flights/Details/@item.FlightID">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
