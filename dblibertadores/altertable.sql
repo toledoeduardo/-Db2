@@ -1,0 +1,9 @@
+ALTER TABLE matches MODIFY COLUMN stage VARCHAR(20);
+
+ALTER TABLE group_stage
+ADD COLUMN goals_scored INT DEFAULT 0,
+ADD COLUMN goals_conceded INT DEFAULT 0,
+ADD COLUMN goal_difference INT DEFAULT 0;
+
+ALTER TABLE matches
+ADD COLUMN group_name CHAR(1) DEFAULT NULL;
